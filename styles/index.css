@@ -1,0 +1,19 @@
+span {
+  color: #cc0000;
+}
+
+input[type='number'] {
+  width: 100px;
+}
+
+canvas {
+  border: thin solid #cccccc;
+}
+
+img {
+  border: 4px double #0000cc;
+}
+
+.hide {
+  display: none;
+}

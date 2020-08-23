@@ -1,11 +1,31 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>jsgif</title>
-</head>
-<body>
-  
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jsgif</title>
+    <script src="scripts/lib/LZWEncoder.js"></script>
+    <script src="scripts/lib/NeuQuant.js"></script>
+    <script src="scripts/lib/GIFEncoder.js"></script>
+    <script src="scripts/lib/b64.js"></script>
+    <script src="scripts/index.js"></script>
+    <link rel="stylesheet" href="styles/index.css" />
+  </head>
+  <body>
+    <h1>アニメーション GIF 変換</h1>
+    <input type="radio" checked />
+    <p>動画: <input type="file" accept="video/*" /></p>
+    <input type="radio" name="source" />
+    <p>カメラ: <span>未接続</span></p>
+    <hr />
+    <p>幅: <input type="number" value="200" /></p>
+    <p>高さ: <input type="number" value="150" /></p>
+    <input type="button" value="変換開始" />
+    <input type="button" value="変換停止" />
+    <input type="button" value="保存" />
+    <hr />
+    <video src=""></video>
+    <canvas></canvas>
+    <img src="" alt="" />
+  </body>
 </html>
