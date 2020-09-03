@@ -11,21 +11,34 @@
     <script src="scripts/index.js"></script>
     <link rel="stylesheet" href="styles/index.css" />
   </head>
-  <body>
+  <body onload="init()">
     <h1>アニメーション GIF 変換</h1>
-    <input type="radio" checked />
-    <p>動画: <input type="file" accept="video/*" /></p>
-    <input type="radio" name="source" />
-    <p>カメラ: <span>未接続</span></p>
+    <input
+      type="radio"
+      name="source"
+      id="file"
+      checked
+      onchange="setSource()"
+    />
+    <p>
+      動画:
+      <input type="file" accept="video/*" onchange="loadVideo(this.files)" />
+    </p>
+    <input type="radio" name="source" id="camera" onchange="setSource()" />
+    <p>カメラ: <span id="message">未接続</span></p>
     <hr />
-    <p>幅: <input type="number" value="200" /></p>
-    <p>高さ: <input type="number" value="150" /></p>
-    <input type="button" value="変換開始" />
-    <input type="button" value="変換停止" />
-    <input type="button" value="保存" />
+    <p>
+      幅: <input type="number" id="width" value="200" onchange="setSize()" />
+    </p>
+    <p>
+      高さ: <input type="number" id="height" value="150" onchange="setSize()" />
+    </p>
+    <input type="button" id="start" value="変換開始" onclick="startEncord()" />
+    <input type="button" id="stop" value="変換停止" onclick="stopEncord()" />
+    <input type="button" id="save" value="保存" onclick="saveGIF()" />
     <hr />
-    <video src=""></video>
-    <canvas></canvas>
-    <img src="" alt="" />
+    <video id="video"></video>
+    <canvas id="videoCanvas"></canvas>
+    <img id="output" class="hide" />
   </body>
 </html>
